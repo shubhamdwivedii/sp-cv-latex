@@ -223,6 +223,7 @@ boxrule=2pt,arc=0pt,boxsep=2pt,left=2pt,right=2pt,top=2pt,bottom=2pt}
 \newcommand{\githubsymbol}{\faGithub}
 \newcommand{\orcidsymbol}{\aiOrcid}
 \newcommand{\mailsymbol}{\faEnvelope}
+\newcommand{\graduationcap}{\faGraduationCap}
 \newcommand{\birthdaysymbol}{\faBirthdayCake}
 
 \newcommand{\printinfo}[2]{\mbox{\makebox[1.5em][c]{\textcolor{light_icons}{\normalfont #1}}\hspace{0.5em}\textcolor{light_body}{#2}\hspace{2em}}}
@@ -240,6 +241,7 @@ boxrule=2pt,arc=0pt,boxsep=2pt,left=2pt,right=2pt,top=2pt,bottom=2pt}
 \newcommand{\github}[1]{\href{https://www.github.com/#1}{\printinfo{\githubsymbol}{#1}}}
 \newcommand{\orcid}[1]{\printinfo{\orcidsymbol}{#1}}
 \newcommand{\location}[1]{\printinfo{\locationsymbol}{#1}}
+\newcommand{\graduation}[1]{\printinfo{\graduationcap}{#1}}
 \newcommand{\birthday}[1]{\printinfo{\birthdaysymbol}{#1}}
 
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
@@ -324,15 +326,20 @@ boxrule=2pt,arc=0pt,boxsep=2pt,left=2pt,right=2pt,top=2pt,bottom=2pt}
   \ifstrequal{#2}{}{}{{\color{secondary_body}\small{\faBuilding\hspace{0.5em}#2}}\hspace{1em}}
   \ifstrequal{#3}{}{}{{\color{secondary_body}\small{\faCalendar\hspace{0.5em}#3}}\hspace{1em}}%
   \ifstrequal{#4}{}{}{{\color{secondary_body}\small{\faMapMarker\hspace{0.5em}#4}}\hspace{1em}}\par
-  \ifstrequal{#5}{}{}{\color{secondary_body}\textbf{\small Keywords:} \textit{#5}\par}
+  \ifstrequal{#5}{}{}{\color{secondary_body}\textbf{\small Technologies:} \textit{#5}\par}
   \smallskip\normalsize\color{body}
 }
 
 \newcommand{\cvlistitem}[2]{%
 {\bfseries\color{accent_body}{#1}}\\
-\ifstrequal{#2}{}{}{\itshape\color{secondary_body}{#2}}\color{body}\par
+\ifstrequal{#2}{}{}{\color{secondary_body}{#2}}\color{body}\par
 \medskip
 }
+
+\newcommand{\cvtag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+}
+
 
 \newenvironment{cvcolumn}[1]{\begin{minipage}[t]{#1}\raggedright}{\end{minipage}}
 
