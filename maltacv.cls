@@ -104,6 +104,7 @@
 \definecolor{LightIcons}{HTML}{ffffff}
 \definecolor{AccentBody}{HTML}{002256}
 \definecolor{Primary}{HTML}{27507d}
+\definecolor{LinkColor}{RGB}{97, 54, 68}
 
 \colorlet{primary}{Primary}
 \colorlet{accent_body}{AccentBody}
@@ -370,8 +371,11 @@ boxrule=2pt,arc=0pt,boxsep=2pt,left=2pt,right=2pt,top=2pt,bottom=2pt}
 \AtEndPreamble{
   \RequirePackage[unicode]{hyperref}% unicode is required for unicode pdf metadata
   \hypersetup{
+    linkcolor     = blue!50!red, 
+    urlcolor      = LinkColor,
     breaklinks,
     baseurl       = http://,
+    colorlinks    = true, 
     pdfborder     = 0 0 0,
     pdfpagemode   = UseNone,% do not show thumbnails or bookmarks on opening
     pdfstartpage  = 1,
@@ -384,3 +388,4 @@ boxrule=2pt,arc=0pt,boxsep=2pt,left=2pt,right=2pt,top=2pt,bottom=2pt}
     pdfsubject    = {Curriculum Vit\ae of \@firstname{}~\@familyname{}},
     pdfkeywords   = {\@firstname{}~\@familyname{}, curriculum vit\ae{}, resum\'{e}}}
 }
+
